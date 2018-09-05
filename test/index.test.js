@@ -1,12 +1,14 @@
-import test from 'ava';
-import webpack from 'webpack';
+import test from 'ava'
+import webpack from 'webpack'
+import path from 'path'
 
 // 0. Import the config that uses my plugin
-import options from './webpack.config.js';
+import optionsBuilder from './fixtures/webpack.config';
 
-test.cb('Compiles project sample', t => {
+test.cb('compile not specifying name', t => {
   // 1. Run webpack
-  webpack(options, function(err, stats) {
+  const configPath = path.resolve(__dirname, 'configs/config1')
+  webpack(optionsBuilder({ dir: configPath }), function(err, stats) {
 
     // 2. Fail test if there are errors
     if (err) {
@@ -15,12 +17,12 @@ test.cb('Compiles project sample', t => {
       return t.end(stats.toString())
     }
 
-    // 3. Map asset objects to output filenames
-    const files = stats.toJson().assets.map(x => x.name)
-
-    // 4. Run assertions. Make sure that the three expected files were generated
-    const CONFIG = require('./dist/config')
-    t.is(CONFIG, true)
+    // 3. Run assertions.
+    const CONFIG = require('./fixtures/dist/config')
+    t.deepEqual(CONFIG, {
+      a: 1,
+      b: 2
+    })
 
     t.end()
   })
