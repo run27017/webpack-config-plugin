@@ -19,7 +19,8 @@ test.cb('Compiles project sample', t => {
     const files = stats.toJson().assets.map(x => x.name)
 
     // 4. Run assertions. Make sure that the three expected files were generated
-    t.pass()
+    const CONFIG = require('./dist/config')
+    t.is(CONFIG, true)
 
     t.end()
   })
