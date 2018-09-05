@@ -1,0 +1,17 @@
+{
+  "name": "config-plugin",
+  "version": "0.0.1",
+  "description": "一个管理配置文件的Webpack插件，有点像DefinePlugin，但比DefinePlugin更适合管理配置项。",
+  "main": "lib/index.js",
+  "repository": "https://gitee.com/run27017/config-plugin",
+  "author": "run27017",
+  "license": "MIT",
+  "private": false,
+  "ava": {
+    "files": "test/*.test.js"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "webpack": "^4.17.2"
+  }
+}
