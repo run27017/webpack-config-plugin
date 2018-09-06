@@ -1,7 +1,7 @@
 const path = require('path')
 const ConfigPlugin = require('../../lib')
 
-module.exports = function (configOptions) {
+module.exports = function ({ configPluginOptions, targetFile }) {
   return {
     mode: 'development',
     context: __dirname,
@@ -10,10 +10,10 @@ module.exports = function (configOptions) {
       library: 'CONFIG',
       libraryTarget: 'commonjs2',
       path: path.resolve(__dirname, 'dist'),
-      filename: 'config.js'
+      filename: targetFile
     },
     plugins: [
-      new ConfigPlugin(configOptions)
+      new ConfigPlugin(configPluginOptions)
     ]
   }
 }

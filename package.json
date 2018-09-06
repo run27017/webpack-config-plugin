@@ -13,5 +13,8 @@
   "devDependencies": {
     "ava": "^0.25.0",
     "webpack": "^4.17.2"
+  },
+  "dependencies": {
+    "merge-deep": "^3.0.2"
   }
 }
