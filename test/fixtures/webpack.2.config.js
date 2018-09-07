@@ -5,7 +5,7 @@ module.exports = function ({ configPluginOptions, targetFile }) {
   return {
     mode: 'development',
     context: __dirname,
-    entry: './index.js',
+    entry: './index.2.js',
     output: {
       libraryTarget: 'commonjs2',
       path: path.resolve(__dirname, 'dist'),
