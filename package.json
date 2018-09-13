@@ -1,9 +1,9 @@
 {
   "name": "config-plugin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "管理配置文件的Webpack插件，支持环境名、local.",
   "main": "lib/index.js",
-  "repository": "https://gitee.com/run27017/config-plugin",
+  "repository": "https://github.com/run27017/webpack-config-plugin.git",
   "author": "run27017",
   "license": "MIT",
   "private": false,
